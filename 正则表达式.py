@@ -1,5 +1,9 @@
 import re
-print(re.match('www', 'www.runoob.com').span())  # 在起始位置匹配
-print(re.match('www.runoob.com', 'www.runoob.com'))         # 不在起始位置匹配
 
-print(re.match('html', '<html>www.runoob.com</html>'))         # 不在起始位置匹配
+string = """
+<a href='www.runoob.com'>first</a>,
+<a href='www.baidu.com'>second</a>
+"""
+
+r = re.findall(r'<a href=\'([www].*)\'>(.*)</a>', string)
+print(r)
